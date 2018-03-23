@@ -44,7 +44,7 @@ public class CoffeeMaker {
 	
 	 * @return boolean */
 	public boolean addRecipe(Recipe r) {
-        boolean canAddRecipe = true;
+        boolean canAddRecipe = false;
         
         //Check for an empty recipe, add recipe to first empty spot
         if(doesntAlreadyExist(r)) {
@@ -60,6 +60,7 @@ public class CoffeeMaker {
         		recipeFull[emptySpot] = true;
         	}
         	else {
+        		//System.out.println("here");
         		canAddRecipe = false;
         	}
         }
@@ -151,10 +152,11 @@ public class CoffeeMaker {
             canMakeCoffee = false;
         }
         if(!inventory.enoughIngredients(r)) {
-            canMakeCoffee = false;
+            System.out.println("Not enough ingredients");
+        	canMakeCoffee = false;
         }
         if(canMakeCoffee) {
-	        inventory.setCoffee(inventory.getCoffee() + r.getAmtCoffee()); 
+	        inventory.setCoffee(inventory.getCoffee() - r.getAmtCoffee()); 
 	        inventory.setMilk(inventory.getMilk() - r.getAmtMilk());
 	        inventory.setSugar(inventory.getSugar() - r.getAmtSugar());
 	        inventory.setChocolate(inventory.getChocolate() - r.getAmtChocolate());
