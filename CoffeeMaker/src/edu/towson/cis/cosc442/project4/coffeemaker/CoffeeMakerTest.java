@@ -18,6 +18,7 @@ public class CoffeeMakerTest {
 	 *
 	 * @generatedBy CodePro at 3/20/18 2:46 PM
 	 */
+
 	@Test
 	public void testCoffeeMaker_1()
 		throws Exception {
@@ -45,115 +46,8 @@ public class CoffeeMakerTest {
 		assertNotNull(result);
 	}
 
-	/**
-	 * Run the boolean addInventory(int,int,int,int) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/20/18 2:46 PM
-	 */
-	@Test
-	public void testAddInventory_1()
-		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		int amtCoffee = 1;
-		int amtMilk = 1;
-		int amtSugar = 0;
-		int amtChocolate = -1;
 
-		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
 
-		// add additional test code here
-		assertEquals(false, result);
-	}
-
-	/**
-	 * Run the boolean addInventory(int,int,int,int) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/20/18 2:46 PM
-	 */
-	@Test
-	public void testAddInventory_2()
-		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		int amtCoffee = 1;
-		int amtMilk = 1;
-		int amtSugar = 0;
-		int amtChocolate = 1;
-
-		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
-
-		// add additional test code here
-		assertEquals(true, result);
-	}
-
-	/**
-	 * Run the boolean addInventory(int,int,int,int) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/20/18 2:46 PM
-	 */
-	@Test
-	public void testAddInventory_3()
-		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		int amtCoffee = -1;
-		int amtMilk = 1;
-		int amtSugar = 1;
-		int amtChocolate = 1;
-
-		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
-
-		// add additional test code here
-		assertEquals(false, result);
-	}
-
-	/**
-	 * Run the boolean addInventory(int,int,int,int) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/20/18 2:46 PM
-	 */
-	@Test
-	public void testAddInventory_4()
-		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		int amtCoffee = 1;
-		int amtMilk = -1;
-		int amtSugar = 1;
-		int amtChocolate = 1;
-
-		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
-
-		// add additional test code here
-		assertEquals(false, result);
-	}
-
-	/**
-	 * Run the boolean addInventory(int,int,int,int) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 3/20/18 2:46 PM
-	 */
-	@Test
-	public void testAddInventory_5()
-		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		int amtCoffee = 1;
-		int amtMilk = 1;
-		int amtSugar = 1;
-		int amtChocolate = 1;
-
-		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtSugar, amtChocolate);
-
-		// add additional test code here
-		assertEquals(false, result);
-	}
 
 	/**
 	 * Run the boolean addRecipe(Recipe) method test.
@@ -320,7 +214,103 @@ public class CoffeeMakerTest {
 		assertEquals(15, result.getChocolate());
 		assertEquals(15, result.getMilk());
 	}
+	
+	@Test 
+	public void testAddInventory_1()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = -1;
+		int amtMilk = 1;
+		int amtChocolate = 1;
+		int amtSugar = 1;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(false, result);
+	}
 
+	@Test 
+	public void testAddInventory_2()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = 1;
+		int amtMilk = 1;
+		int amtChocolate = 1;
+		int amtSugar = 1;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(true, result);
+	}
+	
+	@Test 
+	public void testAddInventory_3()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = 1;
+		int amtMilk = -1;
+		int amtChocolate = 1;
+		int amtSugar = 1;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(false, result);
+	}
+	
+	@Test 
+	public void testAddInventory_4()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = 1;
+		int amtMilk = 1;
+		int amtChocolate = -1;
+		int amtSugar = 1;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(false, result);
+	}
+	
+	@Test 
+	public void testAddInventory_5()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = 1;
+		int amtMilk = 1;
+		int amtChocolate = 1;
+		int amtSugar = -1;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(false, result);
+	}
+	
+	@Test 
+	public void testAddInventory_6()
+	{
+		
+		CoffeeMaker fixture = new CoffeeMaker();
+		
+		int amtChocolate = 1;
+		int amtCoffee = 2;
+		int amtMilk = 3;
+		int amtSugar = 4;
+		
+		fixture.addInventory(amtCoffee, amtMilk, amtSugar, 
+				amtChocolate);
+		
+		Inventory i2 = fixture.checkInventory();
+		assertEquals(17, i2.getCoffee() );
+		assertEquals(16, i2.getChocolate() );
+		assertEquals(19, i2.getSugar() );
+		assertEquals(18, i2.getMilk() );
+	}
+	
 	/**
 	 * Run the boolean deleteRecipe(Recipe) method test.
 	 *
@@ -331,13 +321,30 @@ public class CoffeeMakerTest {
 	@Test
 	public void testDeleteRecipe_1()
 		throws Exception {
-		CoffeeMaker fixture = new CoffeeMaker();
-		Recipe r = new Recipe();
-
-		boolean result = fixture.deleteRecipe(r);
+CoffeeMaker fixture = new CoffeeMaker();
+		
+		Recipe r1 = new Recipe();
+		r1.setName("first");
+		r1.setPrice(10);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
+		
+		Recipe r2 = new Recipe();
+		r2.setName("second");
+		r2.setPrice(10);
+		r2.setAmtChocolate(2);
+		r2.setAmtCoffee(2);
+		r2.setAmtMilk(2);
+		r2.setAmtSugar(2);
+		
+		fixture.addRecipe(r1);
+		fixture.addRecipe(r2);
+		boolean result1 = fixture.deleteRecipe(r2);
 
 		// add additional test code here
-		assertEquals(false, result);
+		assertEquals(true, result1);
 	}
 
 	/**
@@ -829,7 +836,6 @@ public class CoffeeMakerTest {
 	@Before
 	public void setUp()
 		throws Exception {
-		// add additional set up code here
 	}
 
 	/**
