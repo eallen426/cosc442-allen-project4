@@ -311,6 +311,22 @@ public class CoffeeMakerTest {
 		assertEquals(18, i2.getMilk() );
 	}
 	
+	@Test 
+	public void testAddInventory_7()
+	{
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtCoffee = 0;
+		int amtMilk = 0;
+		int amtChocolate = 0;
+		int amtSugar = 0;
+		
+		boolean result = fixture.addInventory(amtCoffee, amtMilk, amtChocolate, 
+				amtSugar);
+		
+		assertEquals(true, result);
+	}
+	
+	
 	/**
 	 * Run the boolean deleteRecipe(Recipe) method test.
 	 *
@@ -754,13 +770,27 @@ CoffeeMaker fixture = new CoffeeMaker();
 	public void testMakeCoffee_1()
 		throws Exception {
 		CoffeeMaker fixture = new CoffeeMaker();
-		Recipe r = new Recipe();
-		int amtPaid = 1;
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(10);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
 
-		int result = fixture.makeCoffee(r, amtPaid);
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
 
 		// add additional test code here
-		assertEquals(1, result);
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(13, i1.getChocolate());
+		assertEquals(13, i1.getCoffee());
+		assertEquals(13, i1.getMilk());
+		assertEquals(13, i1.getSugar());
+		assertEquals(10, result);
 	}
 
 	/**
@@ -774,27 +804,179 @@ CoffeeMaker fixture = new CoffeeMaker();
 	public void testMakeCoffee_2()
 		throws Exception {
 		CoffeeMaker fixture = new CoffeeMaker();
-		Recipe r = new Recipe();
-		int amtPaid = 1;
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(10);
+		r1.setAmtChocolate(20);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
 
-		int result = fixture.makeCoffee(r, amtPaid);
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
 
 		// add additional test code here
-		assertEquals(1, result);
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(15, i1.getChocolate());
+		assertEquals(15, i1.getCoffee());
+		assertEquals(15, i1.getMilk());
+		assertEquals(15, i1.getSugar());
+		assertEquals(20, result);
 	}
+
+	@Test
+	public void testMakeCoffee_3()
+		throws Exception {
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(21);
+		r1.setAmtChocolate(20);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
+
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
+
+		// add additional test code here
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(15, i1.getChocolate());
+		assertEquals(15, i1.getCoffee());
+		assertEquals(15, i1.getMilk());
+		assertEquals(15, i1.getSugar());
+		assertEquals(20, result);
+	}
+	
+	@Test
+	public void testMakeCoffee_4()
+		throws Exception {
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(21);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(20);
+
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
+
+		// add additional test code here
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(15, i1.getChocolate());
+		assertEquals(15, i1.getCoffee());
+		assertEquals(15, i1.getMilk());
+		assertEquals(15, i1.getSugar());
+		assertEquals(20, result);
+	}
+	
+	@Test
+	public void testMakeCoffee_5()
+		throws Exception {
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(21);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(20);
+		r1.setAmtSugar(2);
+
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
+
+		// add additional test code here
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(15, i1.getChocolate());
+		assertEquals(15, i1.getCoffee());
+		assertEquals(15, i1.getMilk());
+		assertEquals(15, i1.getSugar());
+		assertEquals(20, result);
+	}
+	
+	@Test
+	public void testMakeCoffee_6()
+		throws Exception {
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(21);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(20);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
+
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
+
+		// add additional test code here
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(15, i1.getChocolate());
+		assertEquals(15, i1.getCoffee());
+		assertEquals(15, i1.getMilk());
+		assertEquals(15, i1.getSugar());
+		assertEquals(20, result);
+	}
+
+	@Test
+	public void testMakeCoffee_7()
+		throws Exception {
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(20);
+		r1.setAmtChocolate(2);
+		r1.setAmtCoffee(2);
+		r1.setAmtMilk(2);
+		r1.setAmtSugar(2);
+	
+		int result = fixture.makeCoffee(r1, amtPaid);
+		Inventory i1 = fixture.checkInventory();
+	
+		// add additional test code here
+		System.out.println(result);
+		System.out.println(i1.getCoffee());
+		assertEquals(13, i1.getChocolate());
+		assertEquals(13, i1.getCoffee());
+		assertEquals(13, i1.getMilk());
+		assertEquals(13, i1.getSugar());
+		assertEquals(0, result);
+	}
+	
 	
 	@Test
 	public void testRecipe_1()
 		throws Exception {
 		Recipe r = new Recipe();
-		r.setAmtChocolate(-1);
-		r.setAmtCoffee(-1);
-		r.setAmtMilk(-1);
-		r.setAmtSugar(-1);
-		assertEquals(r.getAmtChocolate(), 0);
-		assertEquals(r.getAmtCoffee(), 0);
-		assertEquals(r.getAmtMilk(), 0);
-		assertEquals(r.getAmtSugar(), 0);
+		r.setPrice(0);
+		r.setAmtChocolate(0);
+		r.setAmtCoffee(0);
+		r.setAmtMilk(0);
+		r.setAmtSugar(0);
+		assertEquals(0, r.getAmtChocolate());
+		assertEquals(0, r.getAmtCoffee());
+		assertEquals(0, r.getAmtSugar());
+		assertEquals(0, r.getAmtMilk());
+		assertEquals(0, r.getPrice());
 	}
 	
 	@Test
@@ -818,11 +1000,64 @@ CoffeeMaker fixture = new CoffeeMaker();
 		i.setMilk(-1);
 		i.setSugar(-1);
 		
+		assertEquals(i.getChocolate(), -1);
+		assertEquals(i.getCoffee(), -1);
+		assertEquals(i.getMilk(), -1);
+		assertEquals(i.getSugar(), -1);
+	}
+	
+	@Test
+	public void testInventory_3()
+		throws Exception {
+		Inventory i = new Inventory();
+		i.setMilk(12);
+		i.setChocolate(12);
+		i.setCoffee(12);
+		i.setSugar(12);
+		
+		assertEquals(i.getChocolate(), 12);
+		assertEquals(i.getCoffee(), 12);
+		assertEquals(i.getMilk(), 12);
+		assertEquals(i.getSugar(), 12);
+	}
+	
+	@Test
+	public void testInventory_4()
+		throws Exception {
+		Inventory i = new Inventory();
+		i.setMilk(0);
+		i.setChocolate(0);
+		i.setCoffee(0);
+		i.setSugar(0);
+		
 		assertEquals(i.getChocolate(), 0);
 		assertEquals(i.getCoffee(), 0);
 		assertEquals(i.getMilk(), 0);
 		assertEquals(i.getSugar(), 0);
 	}
+	
+	@Test
+	public void testInventory_5()
+		throws Exception {
+		Inventory i = new Inventory();
+		
+		CoffeeMaker fixture = new CoffeeMaker();
+		int amtPaid = 20;
+		
+		Recipe r1 = new Recipe();
+		r1.setName("edit1");
+		r1.setPrice(5);
+		r1.setAmtChocolate(15);
+		r1.setAmtCoffee(15);
+		r1.setAmtMilk(15);
+		r1.setAmtSugar(15);
+
+		int result = fixture.makeCoffee(r1, amtPaid);
+		
+		assertEquals(15, result);
+	}
+	
+	
 	
 	
 	/**

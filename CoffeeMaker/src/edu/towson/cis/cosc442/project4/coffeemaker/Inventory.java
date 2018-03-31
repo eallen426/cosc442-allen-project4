@@ -35,7 +35,7 @@ public class Inventory {
     		Inventory.chocolate = chocolate;
     	}
     	else {
-    		Inventory.chocolate = 0;
+    		Inventory.chocolate = -1;
     	}
         
     }
@@ -55,7 +55,7 @@ public class Inventory {
     		Inventory.coffee = coffee;
     	}
     	else {
-    		Inventory.coffee = 0;
+    		Inventory.coffee = -1;
     	}
     }
     /**
@@ -74,7 +74,7 @@ public class Inventory {
     		Inventory.milk = milk;
     	}
     	else {
-    		Inventory.milk = 0;
+    		Inventory.milk = -1;
     	}
     }
     /**
@@ -93,7 +93,7 @@ public class Inventory {
     		Inventory.sugar = sugar;
     	}
     	else {
-    		Inventory.sugar = 0;
+    		Inventory.sugar = -1;
     	}
     }
     
